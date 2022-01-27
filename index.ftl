@@ -1,50 +1,49 @@
 <#include "module/macro.ftl">
 <@layout title="${blog_title!}">
-    <h1>公告</h1>
-    <p>
-        ${settings.index_notice!}
-    </p>
+    <div class="content">
 
-    <h1>文章列表</h1>
-    <ul>
-        <#list posts.content as post>
-            <li>
-                <a href="${post.fullPath!}">${post.title}</a>
-            </li>
-        </#list>
-    </ul>
+        <div class="index-content framed">
+            <h1>${settings.index_notice_title!}</h1>
+            <p>${settings.index_notice_content!}</p>
 
-    <h1>分页</h1>
+        </div>
+        <div class="posts">
+            <#list posts.content as post>
+            <div class="post on-list">
+                <h1 class="post-title">
+                    <a href="${post.fullPath!}">${post.title!}</a>
+                </h1>
+                <div class="post-meta">
+                    <span class="post-date">
+                        ${post.createTime!}
+                    </span>
 
-    <#if posts.totalPages gt 1>
-        <ul>
-            <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
-                <#if pagination.hasPrev>
-                    <li>
-                        <a href="${pagination.prevPageFullPath!}">
-                            上一页
+                    <span class="post-author">:: ${user.nickname!}</span>
+
+                </div>
+                <#if post.thumbnail?? && post.thumbnail!=''>
+                    <div>
+                        <a href="${post.fullPath!}">
+                            <img class="post-cover" src="${post.thumbnail!}" alt="${post.title!}">
                         </a>
-                    </li>
+                    </div>
                 </#if>
-                <#list pagination.rainbowPages as number>
-                    <li>
-                        <#if number.isCurrent>
-                            <span class="current">第 ${number.page!} 页</span>
-                        <#else>
-                            <a href="${number.fullPath!}">第 ${number.page!} 页</a>
-                        </#if>
-                    </li>
-                </#list>
-                <#if pagination.hasNext>
-                    <li>
-                        <a href="${pagination.nextPageFullPath!}">
-                            下一页
-                        </a>
-                    </li>
-                </#if>
-            </@paginationTag>
-        </ul>
-    <#else>
-        <span>当前只有一页</span>
-    </#if>
+                <div class="post-content">
+                    ${post.summary!}...
+                </div>
+
+                <div>
+                    <a class="read-more button" href="${post.fullPath!}">阅读更多 →</a>
+                </div>
+
+            </div>
+            </#list>
+            <div class="pagination">
+                <div class="pagination__buttons">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </@layout>

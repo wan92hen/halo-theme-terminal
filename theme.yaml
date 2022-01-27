@@ -1,12 +1,11 @@
-# 配置详情请参考：https://docs.halo.run/zh/developer-guide/theme/config-files
-id: halo_quickstarter
-name: QuickStarter
+id: halo_terminal
+name: Terminal
 author:
-  name: halo-dev
-  website: https://halo.run
-description: Quick starter theme for halo
-logo: https://avatars.githubusercontent.com/u/48195280?s=200&v=4
-website: https://github.com/halo-dev/halo-theme-quick-starter
-repo: https://github.com/halo-dev/halo-theme-quick-starter
+  name: BugKing
+  website: https://github.com/wangzhen-fit2cloud
+description: A Terminal like Halo theme
+logo: https://avatars1.githubusercontent.com/u/1811819?s=460&v=4
+website: https://github.com/wangzhen-fit2cloud/halo-theme-termial
+repo: https://github.com/wangzhen-fit2cloud/halo-theme-termial
 version: 1.0.0
-require: 1.4.2
+require: 1.3.0
