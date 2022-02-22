@@ -5,7 +5,6 @@
         <div class="index-content framed">
             <h1>${settings.index_notice_title!}</h1>
             <p>${settings.index_notice_content!}</p>
-
         </div>
         <div class="posts">
             <#list posts.content as post>
@@ -15,12 +14,19 @@
                 </h1>
                 <div class="post-meta">
                     <span class="post-date">
-                        ${post.createTime!}
+                        ${post.createTime?date!}
                     </span>
 
                     <span class="post-author">:: ${user.nickname!}</span>
 
                 </div>
+                <#if post.tags?size gt 0>
+                    <span class="post-tags">
+                        <#list post.tags as tag>
+                            #<a href="${tag.fullPath!}" class="tag">${tag.name}</a>&nbsp;
+                        </#list>
+                    </span>
+                </#if>
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <div>
                         <a href="${post.fullPath!}">

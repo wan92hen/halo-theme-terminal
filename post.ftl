@@ -2,6 +2,22 @@
 <@layout title="${post.title!} - ${blog_title!}">
     <div class="post">
         <h1 class="post-title">${post.title!}</h1>
+        <div class="post-meta">
+            <span class="post-date">
+                ${post.createTime?date!}
+            </span>
+            <span class="post-date">
+                [Updated:&nbsp;${post.updateTime?date!}]
+            </span>
+            <span class="post-author">:: ${user.nickname!}</span>
+        </div>
+        <#if post.tags?size gt 0>
+            <span class="post-tags">
+                <#list post.tags as tag>
+                    #<a href="${tag.fullPath!}" class="tag">${tag.name}</a>&nbsp;
+                </#list>
+            </span>
+        </#if>
         <div class="post-content">
             <div>
                 ${post.formatContent!}
