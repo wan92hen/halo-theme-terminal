@@ -6,12 +6,12 @@ genernal:
       name: index_notice_title
       label: 首页公告标题
       type: text
-      default: '欢迎'
+      default: 'Hello Halo!'
     index_notice_content:
       name: index_notice_content
       label: 首页公告内容
       type: textarea
-      default: '希望你在这里能有所收获'
+      default: '一款 Terminal 风格的 Halo 主题'
     theme_color:
       name: theme_color
       label: 主题颜色
