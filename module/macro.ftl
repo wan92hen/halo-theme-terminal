@@ -9,8 +9,8 @@
         <meta name="keywords" content="" />
         <meta name="robots" content="noodp" />
         <link rel="canonical" href="/" />
-        <link rel="stylesheet" type="text/css" href="${theme_base!}/assets/style.css">
-        <link rel="stylesheet" type="text/css" href="${theme_base!}/assets/${settings.theme_color!}.css">
+        <link rel="stylesheet" type="text/css" href="${theme_base!}/static/assets/style.css">
+        <link rel="stylesheet" type="text/css" href="${theme_base!}/static/assets/${settings.theme_color!}.css">
         <link rel="apple-touch-icon" href="${theme_base!}/img/apple-touch-icon-192x192.png">
         <link rel="shortcut icon" href="${theme_base!}/img/favicon/orange.png">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="${title!}" />
@@ -18,7 +18,7 @@
     </head>
 
     <body class="orange">
-        <div class="container headings--one-size">
+        <div class="container center headings--one-size">
             <#include "./header.ftl">
             <div class="content">
                 <#nested>
@@ -33,8 +33,8 @@
                     </div>
                 </div>
             </footer>
-            <script src="${theme_base!}/assets/main.js"></script>
-            <script src="${theme_base!}/assets/prism.js"></script>
+            <script src="${theme_base!}/static/assets/main.js"></script>
+            <script src="${theme_base!}/static/assets/prism.js"></script>
             <#-- 公共底部代码，详情请参考：https://docs.halo.run/zh/developer-guide/theme/public-template-tag 包含：统计代码，底部信息 -->
             <@global.footer />
         </div>
