@@ -38,12 +38,30 @@
 
             </div>
             </#list>
+        </div>
+        <#if posts.totalPages gt 1>
+            <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
             <div class="pagination">
                 <div class="pagination__buttons">
-
+                    <#if pagination.hasPrev>
+                    <span class="button previous">
+                        <a href="${pagination.prevPageFullPath!}">
+                        <span class="button__icon">←</span>
+                        <span class="button__text">上一页</span>
+                        </a>
+                    </span>
+                    </#if>
+                    <#if pagination.hasNext>
+                    <span class="button next">
+                        <a href="${pagination.nextPageFullPath!}">
+                        <span class="button__text">下一页</span>
+                        <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                    </#if>
                 </div>
             </div>
-
-        </div>
+            </@paginationTag>
+        </#if>
     </div>
 </@layout>
